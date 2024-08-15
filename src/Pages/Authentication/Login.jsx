@@ -1,11 +1,46 @@
 import { useState } from "react";
 import { FaGithub, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+
+        const email = e.target.email.value;
+        const password = e.target.password.value
+
+        console.log('login', email, password)
+
+
+        if(!password){
+            setError('Invalid password')
+        }
+
+
+        setError('')
+        
+
+        // userLogin(email, password)
+        //     .then(result => {
+        //         console.log(result.user)
+        //         e.target.reset()
+        //         toast.success('Login success')
+        //         navigate(location?.state? location.state: '/')
+               
+        //     })
+        //     // eslint-disable-next-line no-unused-vars
+        //     .catch(error => {
+        //         setError('invalid password or email')
+        //         toast.warn("Invalid password or email")
+        //     })
+
+    }
 
     return (
         <div>
@@ -15,7 +50,7 @@ const Login = () => {
                         <h1 className="lg:text-5xl font-bold">Login now!</h1>
                     </div>
                     <div className="w-full mt-4 lg:mt-10 lg:w-[800px] mx-auto bg-base-100">
-                        <form  className="rounded-lg card-body bg-gradient-to-r from-[#f5d3d0] to-[#f29c94] border">
+                        <form onSubmit={handleSubmit} className="rounded-lg card-body bg-gradient-to-r from-[#f5d3d0] to-[#f29c94] border">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-xl">Email</span>
