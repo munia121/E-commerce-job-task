@@ -1,0 +1,213 @@
+[
+    {
+      "name": "Oculus Quest 2",
+      "image": "https://example.com/images/oculusquest2.jpg",
+      "description": "All-in-one VR headset by Oculus.",
+      "price": 299.99,
+      "category": "Gaming",
+      "brand": "Oculus",
+      "rating": 4.8,
+      "createdAt": "15 August 2024 10:00 PM"
+    },
+    {
+      "name": "iPhone 13 Pro Max",
+      "image": "https://example.com/images/iphone13promax.jpg",
+      "description": "Flagship smartphone by Apple with advanced camera system.",
+      "price": 1099.99,
+      "category": "Mobile Phones",
+      "brand": "Apple",
+      "rating": 4.9,
+      "createdAt": "14 August 2024 08:30 PM"
+    },
+    {
+      "name": "Samsung Galaxy S22 Ultra",
+      "image": "https://example.com/images/galaxys22ultra.jpg",
+      "description": "High-end smartphone with S Pen support by Samsung.",
+      "price": 1199.99,
+      "category": "Mobile Phones",
+      "brand": "Samsung",
+      "rating": 4.8,
+      "createdAt": "13 August 2024 09:15 PM"
+    },
+    {
+      "name": "Sony Alpha 7 IV",
+      "image": "https://example.com/images/sonyalpha7iv.jpg",
+      "description": "Mirrorless camera with full-frame sensor by Sony.",
+      "price": 2499.99,
+      "category": "Photography",
+      "brand": "Sony",
+      "rating": 4.9,
+      "createdAt": "12 August 2024 11:45 AM"
+    },
+    {
+      "name": "LG OLED55C1PUB",
+      "image": "https://example.com/images/lgoled55c1pub.jpg",
+      "description": "55-inch 4K UHD OLED TV by LG.",
+      "price": 1499.99,
+      "category": "Home Entertainment",
+      "brand": "LG",
+      "rating": 4.8,
+      "createdAt": "11 August 2024 07:30 PM"
+    },
+    {
+      "name": "Razer Blade 15",
+      "image": "https://example.com/images/razerblade15.jpg",
+      "description": "High-performance gaming laptop by Razer.",
+      "price": 2099.99,
+      "category": "Computers",
+      "brand": "Razer",
+      "rating": 4.7,
+      "createdAt": "10 August 2024 03:15 PM"
+    },
+    {
+      "name": "Sony WH-1000XM4",
+      "image": "https://example.com/images/sonywh1000xm4.jpg",
+      "description": "Industry-leading noise-canceling headphones by Sony.",
+      "price": 349.99,
+      "category": "Audio",
+      "brand": "Sony",
+      "rating": 4.9,
+      "createdAt": "09 August 2024 01:00 PM"
+    },
+    {
+      "name": "Fitbit Charge 5",
+      "image": "https://example.com/images/fitbitcharge5.jpg",
+      "description": "Advanced fitness and health tracker by Fitbit.",
+      "price": 129.99,
+      "category": "Wearables",
+      "brand": "Fitbit",
+      "rating": 4.6,
+      "createdAt": "08 August 2024 10:45 AM"
+    },
+    {
+      "name": "Dell XPS 13",
+      "image": "https://example.com/images/dellxps13.jpg",
+      "description": "Ultra-thin and light laptop by Dell.",
+      "price": 1199.99,
+      "category": "Computers",
+      "brand": "Dell",
+      "rating": 4.7,
+      "createdAt": "07 August 2024 02:00 PM"
+    },
+    {
+      "name": "Canon EOS R5",
+      "image": "https://example.com/images/canoneosr5.jpg",
+      "description": "Professional-grade mirrorless camera by Canon.",
+      "price": 3899.99,
+      "category": "Photography",
+      "brand": "Canon",
+      "rating": 4.9,
+      "createdAt": "06 August 2024 05:30 PM"
+    },
+    {
+      "name": "Google Nest Hub (2nd Gen)",
+      "image": "https://example.com/images/googlenesthub.jpg",
+      "description": "Smart display with Google Assistant by Google.",
+      "price": 99.99,
+      "category": "Smart Home",
+      "brand": "Google",
+      "rating": 4.8,
+      "createdAt": "05 August 2024 12:00 PM"
+    },
+    {
+      "name": "Microsoft Xbox Series X",
+      "image": "https://example.com/images/xboxseriesx.jpg",
+      "description": "Next-gen gaming console by Microsoft.",
+      "price": 499.99,
+      "category": "Gaming",
+      "brand": "Microsoft",
+      "rating": 4.9,
+      "createdAt": "04 August 2024 08:00 PM"
+    },
+    {
+      "name": "Apple MacBook Pro 14\"",
+      "image": "https://example.com/images/macbookpro14.jpg",
+      "description": "High-performance laptop with M1 Pro chip by Apple.",
+      "price": 1999.99,
+      "category": "Computers",
+      "brand": "Apple",
+      "rating": 4.9,
+      "createdAt": "03 August 2024 10:30 AM"
+    },
+    {
+      "name": "Bose QuietComfort Earbuds",
+      "image": "https://example.com/images/boseqc_earbuds.jpg",
+      "description": "Wireless noise-canceling earbuds by Bose.",
+      "price": 279.99,
+      "category": "Audio",
+      "brand": "Bose",
+      "rating": 4.7,
+      "createdAt": "02 August 2024 03:45 PM"
+    },
+    {
+      "name": "Sony PlayStation 5",
+      "image": "https://example.com/images/playstation5.jpg",
+      "description": "Next-gen gaming console by Sony.",
+      "price": 499.99,
+      "category": "Gaming",
+      "brand": "Sony",
+      "rating": 4.9,
+      "createdAt": "01 August 2024 09:15 PM"
+    },
+    {
+      "name": "Amazon Echo Show 10",
+      "image": "https://example.com/images/echoshow10.jpg",
+      "description": "Smart display with Alexa by Amazon.",
+      "price": 249.99,
+      "category": "Smart Home",
+      "brand": "Amazon",
+      "rating": 4.7,
+      "createdAt": "31 July 2024 11:00 AM"
+    },
+    {
+      "name": "Samsung Galaxy Tab S8",
+      "image": "https://example.com/images/galaxytabs8.jpg",
+      "description": "High-performance tablet by Samsung.",
+      "price": 749.99,
+      "category": "Tablets",
+      "brand": "Samsung",
+      "rating": 4.8,
+      "createdAt": "30 July 2024 06:30 PM"
+    },
+    {
+      "name": "Apple iPad Pro 12.9\"",
+      "image": "https://example.com/images/ipadpro12.9.jpg",
+      "description": "High-end tablet with M1 chip by Apple.",
+      "price": 1099.99,
+      "category": "Tablets",
+      "brand": "Apple",
+      "rating": 4.9,
+      "createdAt": "29 July 2024 10:15 AM"
+    },
+    {
+      "name": "GoPro HERO9 Black",
+      "image": "https://example.com/images/goprohero9.jpg",
+      "description": "Action camera with 5K video by GoPro.",
+      "price": 399.99,
+      "category": "Photography",
+      "brand": "GoPro",
+      "rating": 4.8,
+      "createdAt": "28 July 2024 01:45 PM"
+    },
+    {
+      "name": "Roku Ultra",
+      "image": "https://example.com/images/rokuultra.jpg",
+      "description": "Streaming media player with 4K and HDR by Roku.",
+      "price": 99.99,
+      "category": "Home Entertainment",
+      "brand": "Roku",
+      "rating": 4.6,
+      "createdAt": "27 July 2024 08:00 PM"
+    },
+    {
+      "name": "Nest Cam (Battery)",
+      "image": "https://example.com/images/nestcam_battery.jpg",
+      "description": "Battery-powered security camera by Nest.",
+      "price": 179.99,
+      "category": "Smart Home",
+      "brand": "Nest",
+      "rating": 4.7,
+      "createdAt": "26 July 202"
+      
+    }
+]
