@@ -1,14 +1,29 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navar = () => {
+    const { user, logOut } = useContext(AuthContext)
     const navLinks = <>
         <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700   border-b-2  border-pink-700 font-bold  rounded-md ' : 'font-bold text-black '} to={'/'}>Home</NavLink></li>
 
         <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700 border border-pink-700 font-bold  rounded-md ' : 'font-bold text-black'} to={'/FG'}>About us</NavLink></li>
-
-       
-
     </>
+
+
+const handleSignOut = () => {
+    logOut()
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            // toast.success('User Log out')
+            console.log(error)
+        })
+}
+
+
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -41,8 +56,24 @@ const Navar = () => {
                        {navLinks}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to={'/login'} className="btn">Sing in</Link>
+                <div className="navbar-end">{
+                        user ?
+                            <>
+                                <div >
+                                    <a data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
+                                        <img className={`rounded-full h-10 w-10  `} src={user?.photoURL || 'https://ibb.co/WxjPyWc'} alt="" />
+                                    </a>
+                                    {/* <Tooltip place="bottom" type='error' id="my-tooltip" style={{ backgroundColor: "rgb(242, 156, 148)", color: "#222" }} ></Tooltip> */}
+
+                                </div>
+                                <button className="btn ml-6 bg-[#f29c94] " onClick={handleSignOut}>Log out</button>
+                            </>
+                            :
+                            <>
+                                <Link to={'/login'} className="btn bg-gradient-to-r from-[#f5d3d0] to-[#f29c94] ">Sing in</Link>
+                            </>
+                    }
+                    {/* <Link to={'/login'} className="btn">Sing in</Link> */}
                 </div>
             </div>
         </div>

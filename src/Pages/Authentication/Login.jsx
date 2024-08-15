@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaGithub, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Component/Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const { userLogin, googleLogin, gitHubLogin } = useContext(AuthContext);
+
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
@@ -18,27 +22,40 @@ const Login = () => {
         console.log('login', email, password)
 
 
-        if(!password){
+        if (!password) {
             setError('Invalid password')
         }
 
 
         setError('')
-        
 
-        // userLogin(email, password)
-        //     .then(result => {
-        //         console.log(result.user)
-        //         e.target.reset()
-        //         toast.success('Login success')
-        //         navigate(location?.state? location.state: '/')
-               
-        //     })
-        //     // eslint-disable-next-line no-unused-vars
-        //     .catch(error => {
-        //         setError('invalid password or email')
-        //         toast.warn("Invalid password or email")
-        //     })
+
+        userLogin(email, password)
+            .then(result => {
+                console.log(result.user)
+                e.target.reset()
+                toast.success('Login success')
+                navigate(location?.state ? location.state : '/')
+
+            })
+            // eslint-disable-next-line no-unused-vars
+            .catch(error => {
+                setError('invalid password or email')
+                toast.warn("Invalid password or email")
+            })
+    }
+
+    const googleHandle = () => {
+        googleLogin()
+            .then(result => {
+                console.log(result.user)
+                navigate(location?.state ? location.state : '/')
+
+            })
+            .catch(error => {
+                console.log(error)
+
+            })
 
     }
 
@@ -66,7 +83,7 @@ const Login = () => {
                                     name="password"
                                     placeholder="password"
                                     className="input input-bordered" required />
-                                <span className="absolute ml-48 mt-14 lg:ml-[660px]"onClick={() => setShowPassword(!showPassword)} >
+                                <span className="absolute ml-48 mt-14 lg:ml-[660px]" onClick={() => setShowPassword(!showPassword)} >
 
                                     {
                                         showPassword ? <FaRegEye size={30}></FaRegEye> :
@@ -98,11 +115,11 @@ const Login = () => {
 
                             </div>
                             <div className="mt-6 mx-auto flex gap-8">
-                                {/* <p onClick={googleHandle} className=" bg-black px-4 rounded-md py-2">
+                                <p onClick={googleHandle} className=" bg-black px-4 rounded-md py-2">
                                     <FcGoogle size={30}></FcGoogle>
                                 </p>
 
-                                <p onClick={gitHubHandle} className="px-4 py-2 rounded-md border">
+                                {/* <p onClick={gitHubHandle} className="px-4 py-2 rounded-md border">
                                     <FaGithub size={30}></FaGithub>
                                 </p> */}
                             </div>

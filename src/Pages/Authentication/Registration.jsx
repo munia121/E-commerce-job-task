@@ -1,8 +1,15 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Component/Provider/AuthProvider";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Registration = () => {
     const [passError, setPassError] = useState('');
+    const navigate = useNavigate()
+
+    const { createUser, updateUserProfile, setAutoUpdate } = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -38,27 +45,27 @@ const Registration = () => {
 
 
 
-        // createUser(email, password)
-        //     .then(result => {
+        createUser(email, password)
+            .then(result => {
 
-        //         updateUserProfile(name, photo)
-        //             .then(() => {
-        //                 // console.log()
-        //                 setAutoUpdate(true)
+                updateUserProfile(name, photo)
+                    .then(() => {
+                        // console.log()
+                        setAutoUpdate(true)
 
-        //             })
-        //             .catch(error => {
-        //                 console.log(error)
-        //             })
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
 
-        //         console.log(result.user)
-        //         e.target.reset()
-        //         toast.success('Register Successfully')
-        //         navigate(location?.state ? location.state : '/')
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
+                console.log(result.user)
+                e.target.reset()
+                toast.success('Register Successfully')
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.log(error)
+            })
 
     }
 
