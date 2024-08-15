@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext, useState } from "react";
 import { FaGithub, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -7,7 +8,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { userLogin, googleLogin, gitHubLogin } = useContext(AuthContext);
+    const { userLogin, googleLogin } = useContext(AuthContext);
 
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -94,7 +95,7 @@ const Login = () => {
 
                                 </span>
                                 {
-                                    // error && <p className="text-red-600">{error}</p>
+                                    error && <p className="text-red-600">{error}</p>
                                 }
 
                                 <label className="label">
@@ -119,9 +120,9 @@ const Login = () => {
                                     <FcGoogle size={30}></FcGoogle>
                                 </p>
 
-                                {/* <p onClick={gitHubHandle} className="px-4 py-2 rounded-md border">
+                                <p  className="px-4 py-2 rounded-md border">
                                     <FaGithub size={30}></FaGithub>
-                                </p> */}
+                                </p>
                             </div>
                         </form>
                     </div>
