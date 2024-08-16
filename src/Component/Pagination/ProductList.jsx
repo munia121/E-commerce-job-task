@@ -2,12 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SingleProduct from "../product-section/SingleProduct";
 import { MdOutlineSearch } from "react-icons/md";
+import SortingDropdown from "../Sorting/SortingDropdown";
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
+    const [sort, setSort] = useState('');
+    const [order, setOrder] = useState('');
 
 
     console.log(products)
@@ -15,7 +18,7 @@ const ProductList = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/products?page=${page}&limit=6&search=${encodeURIComponent(searchTerm)}`);
+                const response = await axios.get(`http://localhost:5000/products?page=${page}&limit=6&search=${encodeURIComponent(searchTerm)}&sort=${sort}&order=${order}`);
                 setProducts(response.data.products);
                 setTotalPages(response.data.totalPages);
             } catch (error) {
@@ -23,7 +26,14 @@ const ProductList = () => {
             }
         };
         fetchProducts();
-    }, [page, searchTerm]);
+    }, [page, searchTerm, sort, order]);
+
+    // sorting
+    const handleSortChange = (selectedSort) =>{
+        const [sortField, sortOrder] = selectedSort.split('_');
+        setSort(sortField);
+        setOrder(sortOrder);
+    }
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
@@ -58,6 +68,7 @@ const ProductList = () => {
             <div>
                 {/* Search Input */}
                 <div className="flex lg:w-[700px] mx-auto mt-10">
+                    <SortingDropdown onSortingChange={handleSortChange}></SortingDropdown>
                     <input
                         type="text"
                         value={searchTerm}

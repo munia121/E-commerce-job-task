@@ -17,7 +17,10 @@ const SingleProduct = ({ product }) => {
                         className="rounded-xl" />
                 </figure>
                 <div className="card-body ">
-                    <h2 className="card-title"> {name} </h2>
+                    <div className="flex justify-between">
+                        <h2 className="card-title"> {name} </h2>
+                        <h3 > {createdAt} </h3>
+                    </div>
                     <h2> {category} </h2>
                     <p> {description} </p>
                     <p>Price: ${price} </p>
