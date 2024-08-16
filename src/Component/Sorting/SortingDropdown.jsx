@@ -11,7 +11,7 @@ const SortingDropdown = ({ onSortingChange }) => {
     }
     return (
         <div>
-            <select value={sortOption} onChange={handleSortChange}>
+            <select className="py-3" value={sortOption} onChange={handleSortChange}>
                 <option value="">Sort by</option>
                 <option value="price_asc">Price: Low to High</option>
                 <option value="price_desc">Price: High to Low</option>

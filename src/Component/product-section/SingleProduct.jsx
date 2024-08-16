@@ -19,7 +19,7 @@ const SingleProduct = ({ product }) => {
                 <div className="card-body ">
                     <div className="flex justify-between">
                         <h2 className="card-title"> {name} </h2>
-                        <h3 > {createdAt} </h3>
+                        <h3 > {new Date(createdAt).toLocaleDateString()} </h3>
                     </div>
                     <h2> {category} </h2>
                     <p> {description} </p>
