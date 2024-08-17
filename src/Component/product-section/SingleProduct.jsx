@@ -11,19 +11,17 @@ const SingleProduct = ({ product }) => {
         <div>
             <div className="card bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
-                    <img
-                        src="https://i.ibb.co/GTG2zjz/images-1.png"
-                        alt="Shoes"
-                        className="rounded-xl" />
+                    <img src={image} className="rounded-xl h-[300px] w-full" />
                 </figure>
-                <div className="card-body ">
+                <div className="card-body relative">
+                    <h2 className="card-title"> {name} </h2>
                     <div className="flex justify-between">
-                        <h2 className="card-title"> {name} </h2>
-                        <h3 > {new Date(createdAt).toLocaleDateString()} </h3>
+                        <h3>Brand: {brand} </h3>
+                        <h3 className="">Created At- {new Date(createdAt).toLocaleDateString()} </h3>
                     </div>
-                    <h2> {category} </h2>
-                    <p> {description} </p>
-                    <p>Price: ${price} </p>
+                    <h2>Category: {category} </h2>
+                    {/* <p> {description} </p> */}
+                    <p >Price: ${price} </p>
                     <Rating
                         style={{ maxWidth: 100 }}
                         value={rating}

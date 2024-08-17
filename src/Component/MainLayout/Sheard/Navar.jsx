@@ -7,7 +7,7 @@ const Navar = () => {
     const navLinks = <>
         <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700   border-b-2  border-pink-700 font-bold  rounded-md ' : 'font-bold text-black '} to={'/'}>Home</NavLink></li>
 
-        <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700 border border-pink-700 font-bold  rounded-md ' : 'font-bold text-black'} to={'/FG'}>About us</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700 border border-pink-700 font-bold  rounded-md ' : 'font-bold text-black'} >About us</NavLink></li>
     </>
 
 
@@ -46,14 +46,14 @@ const handleSignOut = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            {navLinks}
+                           
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-purple-600">ShopPalace</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                       {navLinks}
+                       
                     </ul>
                 </div>
                 <div className="navbar-end">{
@@ -66,11 +66,11 @@ const handleSignOut = () => {
                                     {/* <Tooltip place="bottom" type='error' id="my-tooltip" style={{ backgroundColor: "rgb(242, 156, 148)", color: "#222" }} ></Tooltip> */}
 
                                 </div>
-                                <button className="btn ml-6 bg-[#f29c94] " onClick={handleSignOut}>Log out</button>
+                                <button className="btn ml-6 bg-gradient-to-r from-blue-400 to-purple-600 " onClick={handleSignOut}>Log out</button>
                             </>
                             :
                             <>
-                                <Link to={'/login'} className="btn bg-gradient-to-r from-[#f5d3d0] to-[#f29c94] ">Sing in</Link>
+                                <Link to={'/login'} className="btn bg-gradient-to-r from-blue-400 to-purple-600 ">Sing in</Link>
                             </>
                     }
                     {/* <Link to={'/login'} className="btn">Sing in</Link> */}

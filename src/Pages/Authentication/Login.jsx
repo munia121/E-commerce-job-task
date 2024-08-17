@@ -65,7 +65,7 @@ const Login = () => {
             <div className="hero  min-h-screen mt-20">
                 <div className=" flex-col ">
                     <div className="text-center ">
-                        <h1 className="lg:text-5xl font-bold">Login now!</h1>
+                        <h1 className="lg:text-5xl font-bold  bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-purple-600">ShopPalace!</h1>
                     </div>
                     <div className="w-full mt-4 lg:mt-10 lg:w-[800px] mx-auto bg-base-100">
                         <form onSubmit={handleSubmit} className="rounded-lg card-body bg-gradient-to-r from-[#f5d3d0] to-[#f29c94] border">
