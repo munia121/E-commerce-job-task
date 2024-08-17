@@ -32,10 +32,10 @@ This is the frontend part of the E-commerce website, built with React.js and sty
 2. Add the necessary environment variables. For example:
 
     ```plaintext
-    REACT_APP_API_URL=http://localhost:5000
+    REACT_APP_API_URL=https://job-task-server-lyart.vercel.app
     ```
 
-   Replace `http://localhost:5000` with the URL of your backend server if different.
+   Replace `https://job-task-server-lyart.vercel.app` with the URL of your backend server if different.
 
 ## Running the Application
 

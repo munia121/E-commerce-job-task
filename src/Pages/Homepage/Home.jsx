@@ -5,7 +5,7 @@ import ProductList from "../../Component/Pagination/ProductList";
 const Home = () => {
     return (
         <div>
-            <Navar></Navar>
+            {/* <Navar></Navar> */}
             <ProductList></ProductList>
             <Footer></Footer>
         </div>

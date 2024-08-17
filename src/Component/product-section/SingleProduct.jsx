@@ -21,14 +21,14 @@ const SingleProduct = ({ product }) => {
                     </div>
                     <h2>Category: {category} </h2>
                     {/* <p> {description} </p> */}
-                    <p >Price: ${price} </p>
+                    <p className="font-bold">Price: ${price} </p>
                     <Rating
                         style={{ maxWidth: 100 }}
                         value={rating}
                         readOnly
                     />
                     <div className="card-actions">
-                        <button className="btn btn-primary">Product details</button>
+                        {/* <button className="btn btn-primary">Product details</button> */}
                     </div>
                 </div>
             </div>

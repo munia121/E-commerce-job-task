@@ -1,13 +1,16 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Link, NavLink } from "react-router-dom";
 
 const Navar = () => {
     const { user, logOut } = useContext(AuthContext)
     const navLinks = <>
-        <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700   border-b-2  border-pink-700 font-bold  rounded-md ' : 'font-bold text-black '} to={'/'}>Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'text-white text-xl border-b-2  font-bold   ' : 'font-bold text-white text-xl'} to={'/'}>Home</NavLink></li>
 
-        <li><NavLink className={({ isActive }) => isActive ? 'text-pink-700 border border-pink-700 font-bold  rounded-md ' : 'font-bold text-black'} >About us</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? ' font-bold text-white text-xl border-b-2' : 'font-bold text-white text-xl '} to={'/about'} >About</NavLink></li>
+
+        <li><NavLink className={({ isActive }) => isActive ? ' font-bold text-white text-xl border-b-2' : 'font-bold text-white text-xl '} to={'/contact'} >Contact US</NavLink></li>
     </>
 
 
@@ -26,7 +29,7 @@ const handleSignOut = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar py-5 px-4 rounded-md bg-violet-800 lg:w-[1400px] mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,14 +49,14 @@ const handleSignOut = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                           
+                           {navLinks}
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-l from-blue-400 to-purple-600">ShopPalace</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                       
+                       {navLinks}
                     </ul>
                 </div>
                 <div className="navbar-end">{

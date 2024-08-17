@@ -26,7 +26,7 @@ const ProductList = () => {
     useEffect(() => {
         const fetchBrands = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/brands');
+                const response = await axios.get('https://job-task-server-lyart.vercel.app/brands');
                 setBrand(response.data); // Set the brands data
             } catch (error) {
                 console.error('Error fetching brands:', error);
@@ -40,7 +40,7 @@ const ProductList = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/categories');
+                const response = await axios.get('https://job-task-server-lyart.vercel.app/categories');
                 if (Array.isArray(response.data)) {
                     setCategory(response.data);
                 } else {
@@ -54,13 +54,13 @@ const ProductList = () => {
         fetchCategories();
     }, []);
 
-    console.log(brand)
+    console.log(products)
 
     // Fetch products when the component mounts or the page changes
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/products?page=${page}&limit=6&search=${encodeURIComponent(searchTerm)}&sort=${sort}&order=${order}&brand=${selectBrand}&category=${encodeURIComponent(selectedCategory)}&priceRange=${priceRange}`);
+                const response = await axios.get(`https://job-task-server-lyart.vercel.app/products?page=${page}&limit=6&search=${encodeURIComponent(searchTerm)}&sort=${sort}&order=${order}&brand=${selectBrand}&category=${encodeURIComponent(selectedCategory)}&priceRange=${priceRange}`);
                 setProducts(response.data.products);
                 setTotalPages(response.data.totalPages);
             } catch (error) {
@@ -124,27 +124,33 @@ const ProductList = () => {
     };
 
     return (
-        <div>
-            <div className="flex lg:w-[900px] mx-auto mt-10">
-                <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                    placeholder="Search for products"
-                    className="mb-4 px-4 py-3 border rounded-md w-full"
-                />
-                <button
-                    onClick={handleSearchClick}
-                    className="px-4  btn bg-blue-500 text-white rounded-md hover:bg-blue-600"
-                >
-                    Search
-                    <MdOutlineSearch size={20} />
+        <div className="lg:w-[1400px] mx-auto ">
+            <hr className="border mt-10 border-purple-600"/>
+            <div className="flex justify-between mx-auto mt-10">
+                <div>
+                    <input
+                        type="text"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        placeholder="Search for products"
+                        className="mb-4 px-4 py-3 border rounded-md lg:w-[400px] "
+                    />
+                    <button
+                        onClick={handleSearchClick}
+                        className="px-4  btn bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                    >
+                        Search
+                        <MdOutlineSearch size={20} />
 
-                </button>
+                    </button>
+                </div>
+                <SortingDropdown onSortingChange={handleSortChange} product={products} setProducts={setProducts} ></SortingDropdown>
             </div>
-            <div className="lg:flex  justify-center gap-5 mt-20">
+            <hr className="border mt-3 border-purple-600"/>
+            <p className="mt-20 mb-10 font-bold text-4xl text-center">Filter Products</p>
+            <div className="lg:flex  justify-between gap-5 ">
                 {/* Filter Options */}
-                <select className="font-bold shadow-md border-b-2 px-3" value={brand} onChange={handleBrandChange}>
+                <select className="font-bold shadow-md border-b-2 p-4" value={brand} onChange={handleBrandChange}>
                     <option value="">All Brands</option>
                     {brand.map((b) => (
                         <option key={b} value={b}>{b}</option>
@@ -158,9 +164,8 @@ const ProductList = () => {
                     ))}
                 </select>
                 <div className="lg:flex gap-8 items-center justify-center ">
-                    <SortingDropdown onSortingChange={handleSortChange}></SortingDropdown>
                     {/* price range */}
-                    <select className="font-bold shadow-md border-b-2 px-3" value={priceRange} onChange={handlePriceRangeChange}>
+                    <select className="font-bold shadow-md border-b-2 p-4" value={priceRange} onChange={handlePriceRangeChange}>
                         <option value="">All Prices</option>
                         <option value="0-50">Up to $50</option>
                         <option value="50-100">$50 - $100</option>
@@ -186,7 +191,7 @@ const ProductList = () => {
 
                 <div className="pagination text-center my-10">
                     <button className="border p-3" onClick={handlePreviousPage} disabled={page === 1}>
-                    <FaArrowLeft />
+                        <FaArrowLeft />
 
                     </button>
 
@@ -204,7 +209,7 @@ const ProductList = () => {
                     })}
 
                     <button className="lg:ml-5  border p-3" onClick={handleNextPage} disabled={page === totalPages}>
-                    <FaArrowRight className=" " />
+                        <FaArrowRight className=" " />
 
                     </button>
                 </div>

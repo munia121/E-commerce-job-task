@@ -4,6 +4,8 @@ import Home from "../Pages/Homepage/Home";
 import Login from "../Pages/Authentication/Login";
 import Registration from "../Pages/Authentication/Registration";
 import PrivetRoute from "./PrivetRoute";
+import AboutUs from "../Component/AboutUs/AboutUs";
+import ContactUs from "../Component/Contact/ContactUs";
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +23,14 @@ export const router = createBrowserRouter([
         {
           path:'/register',
           element:<Registration></Registration>
+        },
+        {
+          path:'/about',
+          element:<AboutUs></AboutUs>
+        },
+        {
+          path:'contact',
+          element:<ContactUs></ContactUs>
         }
       ]
     },
